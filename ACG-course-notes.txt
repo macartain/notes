@@ -223,7 +223,7 @@
 		- Reduced Redundancy - only 4x9's durability - e.g. thumbnails - data that can be regenerated
 		- Glacier - cheapest but 3-5 hours to restore
 	- Encryption is available- 3 types: SSE-S3, SSE-KMS and SSE-C
-	- ACLs and Bucket Policies
+	- ACLs and Bucket Policies - for access control - ACL for individual files
 
 	Charged for: Storage/Requests/Storage Mgmt Pricing/Data Transfer (moving internally in S3)/Transfer Acceleration (fast uploads over CloudFront)
 
