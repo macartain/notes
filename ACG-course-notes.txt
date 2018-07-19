@@ -1,0 +1,436 @@
+	.-----------------------------------------------------------------------------.
+	| AWS ACG training                                                            |
+	'-----------------------------------------------------------------------------'
+	[ ] map integration - where did my mail go?
+	[ ] map integration - delivery chain? 
+	[ ] Tagsy reborn
+
+	.-----------------------------------------------------------------------------.
+	| Certificate Solutions Architect Associate                                   |
+	'-----------------------------------------------------------------------------'
+	- Certification feeds into AWS COnsultancy Partner Level
+	- all accounts TB - A-usual - teebeecolm
+
+	.-----------------------------------------------------------------------------.
+	| Chap 2 - AWS - 10,000 Foot Overview                                         |
+	'-----------------------------------------------------------------------------'
+	Global  Infrastructure
+	-----------------------------------------------------------------------------------------------------------------------
+	16 regions, 44 AvZones - 2017
+	6 regions and 17 AZs due 2018
+
+	Region - Availability Zone - Edge Location
+	AZ - always at least 2 per region - basically a DC, engineered for resilience/redundancy/DR
+	EL - cached CDN - often CloudFront - currently over 96
+
+	Compute
+	-----------------------------------------------------------------------------------------------------------------------
+	EC2 - basic service - VMs and dedicated machines
+	EC2 Container - run & manage Docker in cloud at scale
+	Elastic Beanstalk - Allows devs to drop code into the Cloud without worrying about AWS/infrastructure - suto loadbalance, auto EC2 etc
+	Lambda - abstract algorithms - abstracted implementation?
+	LightSail - Virtual Private Servers - lets you set up a basic server - just OS, no security groups etc - basic IP & ssh/rdp login
+	Batch - new
+
+	Storage
+	-----------------------------------------------------------------------------------------------------------------------
+	S3 - Simple Storage Service - object-based online buckets
+	EFS - Elastic FS - NAS - can be then mounted to multiple VMs
+	Glacier - archived old stuff
+	SnowBall - way to  import TB/large (petabyte) scale to AWS/data centres
+	Storage Gateway - VMs built locally to upload to S3
+
+	Databases
+	-----------------------------------------------------------------------------------------------------------------------
+	RDS - mysql, postgres oracle, etc
+	DynamoDB - non-relational
+	ElastiCache - caching common retrieval objects
+	RedShift - DW and BI - complex quereis
+
+	Migration
+	-----------------------------------------------------------------------------------------------------------------------
+	AWS Migration Hub - allows tracking of migration - see below
+	App Discovery Service - automates dependencies of apps etc
+	DB MS - Gets on-prem data to Cloud
+	Server MS - Gets servers moved up to CLoud
+
+	Networking & Content Delivery
+	-----------------------------------------------------------------------------------------------------------------------
+	VPC - Virtual Private CLoud - virtual DC - lots of virtual networking, CIDR zones etc - FUNDAMENTAL
+	CloudFront - Amazon CDN - media distribution etc. via Edge LOcations
+	Route53 - Amazon DNS
+	API Gateway - used with poly & serverless - create APIs for your services to talk to 
+	DirectConnect - dedicated line from office/DC to AWS/VPC
+
+	Developer Tools
+	-----------------------------------------------------------------------------------------------------------------------
+	none in exam
+	CodeStar - PM, CodeCommit (SCS-git), Build (compile & test 0 jenkins?), Deploy (autodeply to EC2/onprem/lambda?), Pipeline (vis deployment), X-Ray (tracing)
+	Cloud9 - IDE
+
+	Mgmt Tools
+	-----------------------------------------------------------------------------------------------------------------------
+	CloudWatch - monitoring - big for sysops
+	AWS AutoScaling - 
+	CloudFormation - SA-related - scripted infrastructure 
+	CLoudTrail - Log changes in AWS environment - 1 week by default - USEFUL -  enables governance, compliance, operational auditing, and risk auditing of your AWS account
+	Config - monitor config, store snapshots, 
+	OpsWorks - like BeanStalk - Chef & Puppet env autoconfig - config as code
+	Service Catalog - just like a corporate one - NO EXAM
+	Systems Mgr - interface for managing EC2 estate, patches etc - can group by apps/workgroups etc - NO EXAM
+	Trusted Advisor - Advises security config, poorly used AWS resources
+	Managed Services - Can get AWS to run this for you
+
+	Media Services - new for 2017
+	-----------------------------------------------------------------------------------------------------------------------
+	Elastic Transcoder - quite old - resizes/purposed video
+	Kinesis Video Streams - see kinesis
+	MediaConvert (file based transcode VOD),MediaLive (live processing),MediaPackage (delivery protection),MediaStore (media-optimised, low latency),MediaTailor (targeted advertising)
+
+	Machine Learning
+	-----------------------------------------------------------------------------------------------------------------------
+	Amazon SageMaker - Deep learning package - neural nets
+	Amazon Comprehend - sentiment analysis
+	AWS DeepLens - AI camera - image recog etc - physical h/w
+	Amazon Lex - powers Alexa - voice recog & comms/chat
+	Machine Learning - entry-level, heuristic e.g. recommended products
+	Amazon Polly - text-to-speech
+	Rekognition - video and image recog
+	Amazon Transcribe - CC generation
+	Amazon Translate - lang translation
+
+	Analytics
+	-----------------------------------------------------------------------------------------------------------------------
+	Athena - SQL against S3 buckets
+	EMR - Elastic Map Reduce - big data processing
+	CloudSearch/Elasticsearch Service - search services 
+	Kinesis - ingest large datasets e.g. social media - video equivalent also - used to collect, process, and analyze real-time, streaming data
+	QuickSight - BI tool - NO EXAMS - fast, cloud-powered business analytics service that makes it easy to build visualizations, perform ad-hoc analysis, and quickly get business insights 
+	Data Pipeline - move data between AWS services
+	AWS Glue - ETL
+
+	Security, Identity & Compliance
+	-----------------------------------------------------------------------------------------------------------------------
+	IAM - Identity Access Mgmt
+	Cognito - device auth - auth gmail/fb etc
+	GuardDuty - looks out for bad logins etc
+	Inspector - agent on instances/EC2s - looks for vulns - can be scheduled
+	Amazon Macie - looks for PII in S3 buckets
+	AWS Single Sign-On
+	Certificate Manager - SSL certs mgmt if using R53
+	CloudHSM - H/W Security Module
+	Directory Service - integrate AD with AWS
+	WAF - WebApp Firewall - Level 7 firewall - SQL injection, cross-site etc
+	Shield - DDOS mitigation
+	Artifact - Audit & Compliance - PCI reports etc
+
+	Mobile Services
+	-----------------------------------------------------------------------------------------------------------------------
+	Mobile Hub - mgmt console - coonects apps to AWS?
+	PinPOint - targeted push notifications
+	AWS AppSync - updtaes data in webapps in realtie & re-sync at de-idle
+	Device Farm - test apps on device farms
+	Mobile Analytics - specific to mobile devs
+
+	AR & VR
+	-----------------------------------------------------------------------------------------------------------------------
+	Amazon Sumerian - VR
+
+	Application Integration
+	-----------------------------------------------------------------------------------------------------------------------
+	Step Functions - manage lambda fns
+	Amazon MQ - msg queues (e.g rabbit?)
+	Simple Notification Service - notifications e.g. billing alarms
+	Simple Queue Service - oldest service - decouple machines/services
+	SWF - simple workflow  - used e.g in warehouses - can involve ppl!
+
+	Customer Engagement
+	-----------------------------------------------------------------------------------------------------------------------
+	Amazon Connect - contact centre as a service
+	Pinpoint - see above
+	Simple Email Service - large scale mailing
+
+	Business Productivity
+	-----------------------------------------------------------------------------------------------------------------------
+	Alexa for Business - use it to join meetings, inform IT of event
+	Amazon Chime - like Hangouts - video conf - recording etc
+	WorkDocs - Dropbox
+	WorkMail - O365/gmail equivalent
+
+	Desktop & App Streaming
+	-----------------------------------------------------------------------------------------------------------------------
+	WorkSpaces - VDI equiv 0  fully managed, secure Desktop-as-a-Service (DaaS) solution that runs on AWS
+	AppStream 2.0 - citrix equiv - stream apps to desktops/devices
+
+	Internet of Things
+	-----------------------------------------------------------------------------------------------------------------------
+	AWS IoT - sensor info marshalling & 
+	IoT Analytics - 
+	IoT Device Management - IoT data scaling
+	Amazon FreeRTOS - free microcontroller OS
+	AWS Greengrass - local processing when omnline not available - resync
+
+	Game Development
+	-----------------------------------------------------------------------------------------------------------------------
+	Amazon GameLift - helps game dev
+
+	.-----------------------------------------------------------------------------.
+	| Chapter 3 - Identity Access Management (IAM)                                |
+	'-----------------------------------------------------------------------------'
+	IAM - central, shared access control to AWS, 2FA, federation
+
+	USERS - ppl
+	GROUPS - collection of user with related permissions
+	ROLES - assigned to resources - e.g. an dEC2 instance can write to S3 bucket (not ppl!)
+	POLICIES - a JSON doc defining one or more permissions -attached to users, groups & roles - these contain effect/action/resource
+
+	- IAM is global - not just by region
+	- Access Key & Secret Access Key - these are used for programmatic interaction e.g. from laptop straight to EC2 - REST API & Command Line
+	- username and pass is used for *interactive*
+	privs assigned directly and via groups
+	- under Security Creds tab, we can deactivate Access Key - this would disallow programmatic access
+
+	New ROLE to assign S3 capabilities to an EC2 resource - this allows our instance to access storage - we want to limit its power
+	* New users have *no* permissions
+	* setup cutomised login - different than root console
+
+	.-----------------------------------------------------------------------------.
+	| Chapter 4 - AWS Object Storage and CDN - S3, Glacier and CloudFront         |
+	'-----------------------------------------------------------------------------'
+	S3
+	-----------------------------------------------------------------------------------------------------------------------
+	S3 - failure tolerant, object-based - as opposed to block-based storage
+	- Zero up to 5TB filesize - unlimited total - stored in buckets (cloud folders)
+	- buckets get an s3-<region>.amazonaws.com/<bucketname> URL - so  they are unique
+	- get a HTTP 200 when a file upload works
+	- bucket name must be unique globally
+
+	READ AFTER WRITE consistency for PUTS of new objects i.e as soon as you write it you can reaqd it
+	EVENTUALLY CONSISTENT for overwrite PUTS and DELETES - may need to propagate
+
+	KEY/VALUE store:
+	KEY - name - remember lexical storing - might be valuable to prefix randomness to spread across bucket
+	VALUE - sequence of bytes
+	VERSION ID - 
+	METADATA - e.g. last mod
+	SUBRESOURCES - ACLs (fine-grained privs by object or bucket) & TORRENT
+
+	- 3x9's availability guaranteed (built for 4)
+	- 11x9's durability - files won't get lost - 2 facilities can be wiped out
+	- Tiered STorage & Lifecycle Mgmt 
+		- S3
+		- S3-IA (infrequently accessed - cheaper but retrieval fee), 
+		- Reduced Redundancy - only 4x9's durability - e.g. thumbnails - data that can be regenerated
+		- Glacier - cheapest but 3-5 hours to restore
+	- Encryption is available- 3 types: SSE-S3, SSE-KMS and SSE-C
+	- ACLs and Bucket Policies
+
+	Charged for: Storage/Requests/Storage Mgmt Pricing/Data Transfer (moving internally in S3)/Transfer Acceleration (fast uploads over CloudFront)
+
+	[!] Read the S3 FAQ - this is vital for exams
+
+	Lab
+	- objects in buckets do not inherit all the qualities of the container
+	- buckets can have ACLs or Bucket POlicys which are JSON docs
+	- once enabled, versioning can only be suspended, never disabled - this can have a storage cost for large files!
+	- versioning retains a full history - note MFA Delete is also available
+	- integrated with lifecycle rules - see later
+
+	Replication
+	-----------------------------------------------------------------------------------------------------------------------
+	- VERSIONING MUST BE ENABLED AT BOTH SIDES OF REP
+	- only new or changed objects replicate - use CLI to do manual copies
+	- deletion markers are also replicated - but deleting a delete marker (!) or an individual version is not replicated
+	- upshot - if you revert to an older version on one side, you need to manually do it on the other too..
+	- cannot replicate to multiple buckets or daisy chain
+
+	Lifecyle Magmt - S3-IA & Glacier
+	-----------------------------------------------------------------------------------------------------------------------
+	- age-based rules to move between storage tiers and then delete (expiration)
+	- can be used with/without versioning and have different policies
+	- has to 128K and min 300 days after creation
+
+	CloudFront
+	-----------------------------------------------------------------------------------------------------------------------
+	- CDN - dist network delivering pages and content
+	- an EDGELOCATION is a cache point
+	- an ORIGIN is where files are coming from: S3/EC2/ElasticLoadBalancer/Route53
+	- DISTRIBUTION is a set of ELs - note an RTMP is used for Media and Flash streaming
+	- TTLs are set on assets - but this all happens automatically - even from non-AWS origins
+
+	- EDGE LOCATIONS are not read-only - you can write/upload too
+	- you are charged for clearing objects prior to their TTL
+	Lab
+	-----------------------------------------------------------------------------------------------------------------------
+	- Watch default TTL -  Default is 24 hours but what is rate of change?
+	- pre-signed URLs/cookies is what locks some ppl out of your content and allows you to enforce e.g. billing
+	- 'Restrict Bucket Access' - this means an origin access ID is needed - stops ppl going straight to the S3 url.. remember to auto-add th eprivileges to this ID
+	- note additional HTTP methods - allow uploads etc
+	- BEHAVIOURS cam be set up to apply different TTLs, acccess methods etc by path pattern
+	- geolocation can be set here ot black/whitelist countries
+	S3 Security & Encryption
+	- Buckets start as private by default - use either BUCKET POLICIES or ACLs - latter can be on objects (e.g. Bass rock pic public access)
+	- Buckets can be setup to send access logs to another bucket
+	- in transit: SSL/TLS
+	- at rest: server side 	- S3 Managed Keys (SSE-S3) - AES256 & all handled by Amazon
+							- AWS Key Mgmt Svc (SSE-KNS) - additonal fees and features - supplies an envelope key and an audit trail for key mgmt
+							- Cust provided Keys (SSE-C) - Amazon does the encryption/decryption but client supplies the keys
+	- at rest: client side - do it yourself and then upload to S3
+
+	Storage Gateway
+	-----------------------------------------------------------------------------------------------------------------------
+	- connects on-prem apps with cloud-based storage - save up to the cloud, basically
+	- it runs in a DC hypervisor  - comes as a VM image - and posts your data up to S3/Glacier
+		- File Gateway (NFS) - just flat files up to S3
+		- Volume sGW (iSCSI) - block-based, so a virtual hard disk (stored as incremental EBS snapshots - elastic block storage) 
+			- Stored Volunes - all on-prem and cloud - - so these are stored on local SAN AND cloud - 1GB-16TB
+			- Cached Volumes - subset on prem - keeps MRU locally, almost a cache - 1GB-32TB
+		- Tape GW (VTL) - virtual tapes sent up - Virtual Tape Library
+
+	Snowball
+	-----------------------------------------------------------------------------------------------------------------------
+	- Import/EXport was the old approach of sending in your own hard drives
+	- Standard - briefcase sized device - petabyte-szed cheap secure transfer - AES256 encrypted, tamper-proof, Trusted Platform Module, secure erasure
+	- Snowball Edge - 100TB - compute as well as storage - you can run lambda stuff on it - might be used on an airplane test to gather data eg
+	- Snowmobile - exabyte level - a truck arrives!
+	- import and export both available
+
+	S3 Transfer Acceleration
+	-----------------------------------------------------------------------------------------------------------------------
+	- uses EdgeLOcations to speed up S£ normal uploads
+	- we enable iut as a bucket property - this gives us a new URL instead of the S3
+
+	Static Website
+	-----------------------------------------------------------------------------------------------------------------------
+	- bucketname has to be the same as the Route53 DNS name if u are going to connect these up
+	- URL will be <bucketname>.s3-website-<region>.amazinaws.com
+
+	S3 Summary
+	-----------------------------------------------------------------------------------------------------------------------
+	- Its object-based, not block, 0-5TB and unlimited =- stored in buckets - 100 is default acct limit
+	- Universal namespace, lowercase - s3-region.amazonaws.conm/<bucket>
+	- Consistency model - new PUTs are READ after WRITE - puts, deletes and overwrites are EVENTUAL
+	- Tiers: S3, S3-IA, S3-RRS & Glacier
+	- key, value, version ID, metadata
+
+	- upload to S3 is much faster by enabling multipart
+
+	.-----------------------------------------------------------------------------.
+	| Chapter 5 - EC2 - The Backbone of AWS                                       |
+	'-----------------------------------------------------------------------------'
+	101
+	-----------------------------------------------------------------------------------------------------------------------
+	[!] Read the EC2 FAQs!
+	- Elastic Compute Cloud - its resizable VMs in the cloud - changes the economics of computing
+	- Insatnce Types:
+		- On Demand - fixed hourly/per second rate with no commitment
+			- in test. SPiky/unpredictable
+		- Reserved (RI) - 1-3 yr contract - discounted
+			- steady state, required minimum. CAn be standard,  convertible or scheduled
+		- Spot - bid for instances - above bid threshold, spun down
+			- flexible start/end times, only feasible at low cost (genomics, BigData processing)
+		- Dedicated Hosts - Physical EC2 hosts - avoids multi tenancy, regulatory issues and allows license-based solutions - can be hourly and Reserved
+	- 10 families of types e.g. D2 - Dense STorage
+	- DR Mc GIFT PX
+		D - DENSE Storage - file storage/DW/HAdoop
+		R - RAM - memory intensive - DBs
+		M - MAIN - general purpose
+		C - COMPUTE - CPU intensive
+		G - GPU graphics intensive - video encoding/3D app streaming
+		I - IOPs storage speed - noSQL/DW/etc
+		F - FPGA - programmable field arrays - HW acceleration
+		T - TEST - low spec general
+		P - PICS - general purpose GPU - graphics machine learning/mining
+		X - EXTREME memory - v large memory - SAP Hanna
+
+	EBS - block based - create a FS, install DB etc. BAsed redundantly in on AZ
+	- Volume types
+		- SSD - General Purpose SSD (GP2) - 3IOPS/GB <10K IOPS
+		- SSD - Provisioned IOPS SSD (IO1) - IO intensive (DBs?) >10K IOPS
+		- HDD - Thruput Optimised HDD (ST1) - Big DAta/DW/log processing - large amounts sequential - (cannot be a boot volume)
+		- HDD - Cold HDD (SC1) - low cost - file server? - cannot be boot volume
+		- HDD - Magnetic (Standard) - cheapest bootable - infrequent access, low cost
+	NB - you cannot mount 1 EBS volume to multiple EC2 instances - use EFS
+
+	Lab
+	-----------------------------------------------------------------------------------------------------------------------
+	- when you create an EC2 instance, the subnet is associated with an AVAILABILITY ZONE - there should be several available... ONE subnet cannot go across more than one AZ!
+	- common question is what happens to EBS vol when EC2 instanc eterminates? this is setup here - defaults to auto-delete
+	[!] Got prompted to use GP2 as teh boot version??!
+
+	use -i wiht pem file to log in:
+	ssh -i ec2-user@192.168.1.1 -i amz-ec2.pem
+
+	Sys - instance is reachable over the network - infrastructure problem if this fails - really the hypervisor
+	instance - the actual instance will come back on another hypervisor if rebooted
+	NB - cannot encrypt the default boot device AMIs for a new instance (workaround later - cp an AMI and encrypt or use 3rd party app)
+
+	puttygen - later
+	-----------------------------------------------------------------------------------------------------------------------
+
+	Security Groups
+	-----------------------------------------------------------------------------------------------------------------------
+	- one instance has many SGs - these are basically sets of fw rules
+	- SGs apply *immediately*
+	- SGs are stateful - inbound traffic rule => automatically allowed back out
+	- SGs cannot be used to deny traffic types or IPs - they are blocked by default - VPCs are used for more detailed NACLs
+	=> SGs are STATEFUL, NACLs are STATELESS
+
+	EBS Volumes
+	-----------------------------------------------------------------------------------------------------------------------
+	- EBS volumes need to be in the same AZ as the EC2 node which tries to mount them
+	- volumes can be modified on the fly - change type, size etc with no service interruption
+	- to move a volume to a new AZ, you take a snapshot and then create a new volume from that snap - this can be anywhere in the region
+	- can also copy the snap to a new REGION
+	- VOLUMES exist on EBS - a virtual harddisk
+	- SNAPSHOTS exist on S3 - they are point-in-time copies of volumes and are incremental (so first on ecan be slow)
+	- You can create AMIs from either volumes or snapshots - for a root device snapshot, you should stop the instance 
+
+	[!] redo this lab before the exam
+
+	Encrypted Root Devices & Volumes
+	-----------------------------------------------------------------------------------------------------------------------
+	- Snaps can be made public or shared, as long as they are not encrypted
+	- snaps of encrypted volumes are auto-encrypted - restored vols from such snaps are also auto-encrypted
+
+	AMI Types
+	-----------------------------------------------------------------------------------------------------------------------
+	Root Device Volume s- the ones you boot your OS from - two types:
+	- EBS (ebs backed) or 
+	- INSTANCE STORE (ephemeral) - cannot be stop/started - only terminated/rebooted (it the hypervisor host fails, you've lost it)
+
+	EBS backed are actual snapshots of EBS volumes - instances are taken form a template in S3
+	- You can only request to keep the root volume on termination if on EBS-backed.
+
+	Elastic LOad Balancers
+	-----------------------------------------------------------------------------------------------------------------------
+	- LB spreads load of traffic across different webservers
+	- classic (TCP) or APPLICATION (Level 7 - more sophisticated)
+	- only get a DNS name, not an IP for a LB
+
+
+	.-----------------------------------------------------------------------------.
+	| AWS ACG training                                                            |
+	'-----------------------------------------------------------------------------'
+	.-----------------------------------------------------------------------------.
+	| AWS ACG training                                                            |
+	'-----------------------------------------------------------------------------'
+	.-----------------------------------------------------------------------------.
+	| AWS ACG training                                                            |
+	'-----------------------------------------------------------------------------'
+	.-----------------------------------------------------------------------------.
+	| AWS ACG training                                                            |
+	'-----------------------------------------------------------------------------'
+
+
+
+
+
+
+
+
+
+
+
+
+
